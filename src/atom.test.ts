@@ -1,12 +1,13 @@
 import { map } from "rxjs/operators";
-import { atom, readonlyAtom } from "../src/atom";
-import { get } from "../src/get";
+import { atom, readonlyAtom } from "./atom";
+import { get } from "./get";
+import { expect, describe, vi } from 'vitest'
 
 describe("atom", () => {
   it("updates subscribers with its value", () => {
     const counter$ = atom(4);
-    const cb1 = jest.fn(),
-      cb2 = jest.fn();
+    const cb1 = vi.fn(),
+      cb2 = vi.fn();
     const sub1 = counter$.subscribe(cb1);
     const sub2 = counter$.subscribe(cb2);
     counter$.set(7);
@@ -18,7 +19,7 @@ describe("atom", () => {
 
   it("calls a subscription synchronously with its current value", () => {
     const counter$ = atom(4);
-    const cb = jest.fn();
+    const cb = vi.fn();
     const sub = counter$.subscribe(cb);
     expect(cb).toHaveBeenCalledWith(4);
     sub.unsubscribe();
@@ -26,7 +27,7 @@ describe("atom", () => {
 
   it("only updates subscribers when actually changed (using ===)", () => {
     const counter$ = atom(4);
-    const cb = jest.fn();
+    const cb = vi.fn();
     const sub = counter$.subscribe(cb);
     cb.mockReset();
     counter$.set(4);
@@ -45,7 +46,7 @@ describe("atom", () => {
       const store$ = atom({ users: ["Tracy", "Popo", "Luggy"], index: 0 });
       const users$ = store$.map(({ users }) => users);
 
-      const sub = jest.fn();
+      const sub = vi.fn();
       users$.subscribe(sub);
       sub.mockClear();
 
@@ -77,7 +78,7 @@ describe("atom", () => {
       counter$.set(7);
       expect(readonlyCounter$.get()).toEqual(7);
 
-      const cb = jest.fn(),
+      const cb = vi.fn(),
         sub = readonlyCounter$.subscribe(cb);
       expect(cb).toHaveBeenCalledWith(7);
       sub.unsubscribe();
