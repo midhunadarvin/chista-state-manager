@@ -1,17 +1,18 @@
 {
   "name": "chista-state-manager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple state manager based on rxjs ",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/chista-state-manager-lib.umd.js",
-  "module": "./dist/chista-state-manager-lib.es.js",
+  "main": "./dist/index",
+  "types": "./dist/index",
+  "module": "chista-state-manager-lib",
   "exports": {
     ".": {
       "import": "./dist/chista-state-manager-lib.es.js",
-      "require": "./dist/chista-state-manager-lib.umd.cjs"
+      "require": "./dist/chista-state-manager-lib.umd.js"
     }
   },
   "scripts": {

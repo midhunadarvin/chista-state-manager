@@ -9,3 +9,4 @@ export { WritableAtom } from "./writable-atom";
 export { combine } from "./combine";
 export { get } from "./get";
 export { useUnwrap } from './chista-state-manager-react/index';
+export { Subscription } from 'rxjs';
