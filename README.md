@@ -47,6 +47,13 @@ pnpm build
 pnpm test 
 ```
 
+## Documentation 
+
+Please refer the following links :
+- [Framework Agnostic Architecture](https://docs.google.com/document/d/1CMQfp-iWE4nGkO3TGqU659HFqX27TJ7B6lb34BHKOcA/edit?usp=sharing)
+- [Portal UI Revamp](https://docs.google.com/document/d/1eEpdSbxBb8ewZpGPRSBRfrqFcxr3EBSXHdg0HxVnvoY/edit#heading=h.ownuxv6cpt09)
+- [Microfrontend Architecture](https://docs.google.com/document/d/1A7QBn4cOniawx9ZHdemraYCEDBN4Rol2AYenxyJeys8/edit#heading=h.rvectoksf8tj)
+- [Metrics Observability Platform](https://docs.google.com/document/d/1i4GRb-xuDIS4RkKxtD0bjR_6VrYRb711QJ4phC-M564/edit#heading=h.e0hmkwvutp6v)
 
 ## Rules
 
